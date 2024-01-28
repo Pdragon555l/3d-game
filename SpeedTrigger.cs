@@ -8,11 +8,13 @@ public class SpeedTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //Увеличение скорости бега игрока
         other.GetComponent<FirstPersonMovement>().runSpeed *= speedFactor;
     }
 
     void OnTriggerExit(Collider other)
     {
+        //Уменьшение скорости бега игрока
         other.GetComponent<FirstPersonMovement>().runSpeed /= speedFactor;
     }
 }

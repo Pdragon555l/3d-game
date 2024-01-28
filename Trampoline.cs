@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-    public float jumpFactor = 2.5f;
-
     void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Jump>().jumpStrength *= jumpFactor;
+        //Увеличение силы прыжка
+        other.GetComponent<Jump>().jumpStrength = 10;
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        other.GetComponent<Jump>().jumpStrength /= jumpFactor;
+        //Уменьшение силы прыжка
+        other.GetComponent<Jump>().jumpStrength = 2;
+
     }
 }
