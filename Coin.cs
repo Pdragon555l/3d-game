@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
-    {
-        Player player = other.GetComponent<Player>();
-        player.CollectCoins();
+    void OnTriggerEnter(Collider other) {
+
+        CoinsCounter coins = other.GetComponent<CoinsCounter>();
+
+        //Количество монеток обновляется
+        coins.CollectCoins();
+
+        //Монетка, которую собрали, уничтожается
         Destroy(gameObject);
     }
 }
